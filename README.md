@@ -1,5 +1,5 @@
-# Q1 FY27 Email Impact
+# Get to know Mina Shoukrala
 
-Static page showing Q1 FY27 (July–September 2026) email results: 4,624 emails sent and 91 replies.
+Static page introducing Mina Shoukrala, Enterprise Business Representative at GitHub, with a few things she has built: a Copilot-made monthly newsletter, account dashboards and an outreach tracker.
 
 Live: https://minashoukrala.github.io/q3-email-impact/

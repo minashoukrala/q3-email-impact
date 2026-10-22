@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Q1 FY27 Email Impact · Mina Shoukrala</title>
-  <meta name="description" content="Q1 FY27 email outreach results: emails sent and replies received.">
+  <title>Get to know Mina Shoukrala · GitHub</title>
+  <meta name="description" content="Get to know Mina Shoukrala, Enterprise Business Representative at GitHub.">
   <style>
     :root {
       --canvas: #0d1117;
@@ -94,12 +94,25 @@
       color: transparent;
     }
 
-    .stats {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(240px, 340px));
-      gap: 24px;
-      margin-top: 56px;
+    .intro {
+      max-width: 680px;
+      margin-top: 22px;
+      color: #c9d1d9;
+      font-size: 1.15rem;
+      line-height: 1.6;
+      text-shadow: 0 2px 16px rgba(0, 0, 0, 0.6);
     }
+
+    .about {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(150px, 200px));
+      gap: 18px;
+      margin-top: 48px;
+    }
+
+    .card.fact { padding: 28px 18px; --line: linear-gradient(90deg, var(--purple), var(--blue) 50%, var(--green)); }
+    .emoji { font-size: 2.4rem; line-height: 1; margin-bottom: 14px; }
+    .built { margin-top: 112px; margin-bottom: -88px; }
 
     .card {
       position: relative;
@@ -121,18 +134,8 @@
       background: var(--line);
     }
 
-    .card.sent { --line: linear-gradient(90deg, var(--purple), var(--blue)); }
-    .card.replies { --line: linear-gradient(90deg, var(--blue), var(--green)); }
 
-    .value {
-      font-size: clamp(3rem, 7vw, 4.75rem);
-      font-weight: 700;
-      letter-spacing: -0.04em;
-      font-variant-numeric: tabular-nums;
-    }
 
-    .card.sent .value { color: #d2a8ff; }
-    .card.replies .value { color: #56d364; }
 
     .label {
       margin-top: 6px;
@@ -243,9 +246,13 @@
       text-align: center;
     }
 
+    @media (max-width: 1080px) {
+      .about { grid-template-columns: repeat(3, minmax(150px, 200px)); }
+    }
+
     @media (max-width: 640px) {
       header { padding: 22px; }
-      .stats { grid-template-columns: 1fr; width: 100%; max-width: 360px; }
+      .about { grid-template-columns: repeat(2, 1fr); width: 100%; }
     }
 
     @media (max-width: 860px) {
@@ -264,20 +271,41 @@
   </header>
 
   <main>
-    <div class="eyebrow">Q1 FY27 · July – September 2026</div>
-    <h1>Mina Shoukrala<br><span class="accent">Email Impact</span></h1>
+    <div class="eyebrow">Enterprise Business Representative · GitHub</div>
+    <h1>Get to know<br><span class="accent">Mina Shoukrala</span></h1>
+    <p class="intro">Originally from Egypt and living in the US for about three years. I help GitHub customers get more from the platform and build tools with Copilot that make my work faster.</p>
 
-    <section class="stats">
-      <div class="card sent">
-        <div class="value" data-target="4624">4,624</div>
-        <div class="label">Emails sent</div>
-        <div class="sub">Events, newsletters &amp; outreach</div>
+    <section class="about">
+      <div class="card fact">
+        <div class="emoji" aria-hidden="true">🇪🇬</div>
+        <div class="label">From Egypt</div>
+        <div class="sub">About 3 years in the US</div>
       </div>
-      <div class="card replies">
-        <div class="value" data-target="91">91</div>
-        <div class="label">Total replies</div>
+      <div class="card fact">
+        <div class="emoji" aria-hidden="true">⚽</div>
+        <div class="label">Soccer</div>
+        <div class="sub">The beautiful game</div>
+      </div>
+      <div class="card fact">
+        <div class="emoji" aria-hidden="true">👑</div>
+        <div class="label">Real Madrid</div>
+        <div class="sub">Hala Madrid</div>
+      </div>
+      <div class="card fact">
+        <div class="emoji" aria-hidden="true">🎾</div>
+        <div class="label">Paddle tennis</div>
+        <div class="sub">On the court whenever I can</div>
+      </div>
+      <div class="card fact">
+        <div class="emoji" aria-hidden="true">🎮</div>
+        <div class="label">Gaming</div>
+        <div class="sub">A little time on the controller</div>
       </div>
     </section>
+
+    <div class="built">
+      <div class="eyebrow">Things I&rsquo;ve built</div>
+    </div>
 
     <section class="showcase">
       <div>
@@ -328,22 +356,5 @@
 
   <footer>Enterprise Business Representative · GitHub</footer>
 
-  <script>
-    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (!reduceMotion) {
-      document.querySelectorAll(".value[data-target]").forEach((el) => {
-        const target = Number(el.dataset.target);
-        const duration = 1600;
-        const start = performance.now();
-        const tick = (now) => {
-          const progress = Math.min((now - start) / duration, 1);
-          const eased = 1 - Math.pow(1 - progress, 3);
-          el.textContent = Math.round(target * eased).toLocaleString("en-US");
-          if (progress < 1) requestAnimationFrame(tick);
-        };
-        requestAnimationFrame(tick);
-      });
-    }
-  </script>
 </body>
 </html>
