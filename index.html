@@ -250,6 +250,18 @@
     @media (max-width: 860px) {
       .showcase { grid-template-columns: 1fr; gap: 32px; text-align: center; }
     }
+
+    .slack {
+      display: inline-flex; align-items: center; gap: 10px;
+      margin-top: 32px; padding: 12px 20px;
+      border: 1px solid var(--border); border-radius: 999px;
+      background: rgba(13, 17, 23, 0.68); backdrop-filter: blur(14px);
+      color: var(--fg); font: inherit; font-size: 1rem; cursor: pointer;
+      transition: border-color 0.2s ease, transform 0.2s ease;
+    }
+    .slack:hover { border-color: rgba(163, 113, 247, 0.7); transform: translateY(-2px); }
+    .slack svg { width: 20px; height: 20px; fill: #e01e5a; }
+    .slack b { color: #d2a8ff; font-weight: 600; }
   </style>
 </head>
 <body>
@@ -293,6 +305,11 @@
         <div class="sub">A little time on the controller</div>
       </div>
     </section>
+
+    <button class="slack" type="button" data-handle="@minashoukrala" title="Copy Slack handle">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5.042 15.165a2.528 2.528 0 0 1-2.52 2.523A2.528 2.528 0 0 1 0 15.165a2.527 2.527 0 0 1 2.522-2.52h2.52v2.52zM6.313 15.165a2.527 2.527 0 0 1 2.521-2.52 2.527 2.527 0 0 1 2.521 2.52v6.313A2.528 2.528 0 0 1 8.834 24a2.528 2.528 0 0 1-2.521-2.522v-6.313zM8.834 5.042a2.528 2.528 0 0 1-2.521-2.52A2.528 2.528 0 0 1 8.834 0a2.528 2.528 0 0 1 2.521 2.522v2.52H8.834zM8.834 6.313a2.528 2.528 0 0 1 2.521 2.521 2.528 2.528 0 0 1-2.521 2.521H2.522A2.528 2.528 0 0 1 0 8.834a2.528 2.528 0 0 1 2.522-2.521h6.312zM18.956 8.834a2.528 2.528 0 0 1 2.522-2.521A2.528 2.528 0 0 1 24 8.834a2.528 2.528 0 0 1-2.522 2.521h-2.522V8.834zM17.688 8.834a2.528 2.528 0 0 1-2.523 2.521 2.527 2.527 0 0 1-2.52-2.521V2.522A2.527 2.527 0 0 1 15.165 0a2.528 2.528 0 0 1 2.523 2.522v6.312zM15.165 18.956a2.528 2.528 0 0 1 2.523 2.522A2.528 2.528 0 0 1 15.165 24a2.527 2.527 0 0 1-2.52-2.522v-2.522h2.52zM15.165 17.688a2.527 2.527 0 0 1-2.52-2.523 2.526 2.526 0 0 1 2.52-2.52h6.313A2.527 2.527 0 0 1 24 15.165a2.528 2.528 0 0 1-2.522 2.523h-6.313z"/></svg>
+      <span class="slack-text">Find me on Slack <b>@minashoukrala</b></span>
+    </button>
 
     <div class="built">
       <div class="eyebrow">Things I&rsquo;ve built</div>
@@ -347,5 +364,13 @@
 
   <footer>Enterprise Business Representative · GitHub</footer>
 
+  <script>
+    document.querySelector(".slack").addEventListener("click", async (e) => {
+      const btn = e.currentTarget, text = btn.querySelector(".slack-text"), original = text.innerHTML;
+      try { await navigator.clipboard.writeText(btn.dataset.handle); text.textContent = "Copied @minashoukrala"; }
+      catch { text.textContent = "Slack: @minashoukrala"; }
+      setTimeout(() => { text.innerHTML = original; }, 1800);
+    });
+  </script>
 </body>
 </html>
