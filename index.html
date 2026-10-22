@@ -101,6 +101,30 @@
       margin-top: 48px;
     }
 
+    .meeting-prep {
+      width: 100%;
+      max-width: 1080px;
+      margin-top: 96px;
+    }
+
+    .meeting-prep h2 {
+      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+      letter-spacing: -0.02em;
+      margin: 14px 0 12px;
+    }
+
+    .meeting-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
+      margin-top: 32px;
+      text-align: left;
+    }
+
+    .meeting-card { --line: linear-gradient(90deg, var(--purple), var(--blue) 50%, var(--green)); }
+    .meeting-card h3 { font-size: 1.2rem; margin-bottom: 12px; }
+    .meeting-card p { color: #c9d1d9; font-size: 0.98rem; line-height: 1.6; }
+
     .card.fact { padding: 28px 18px; --line: linear-gradient(90deg, var(--purple), var(--blue) 50%, var(--green)); }
     .emoji { font-size: 2.4rem; line-height: 1; margin-bottom: 14px; height: 2.4rem; }
     .crest { height: 100%; width: auto; }
@@ -229,6 +253,7 @@
 
     @media (max-width: 860px) {
       .shots { grid-template-columns: 1fr; }
+      .meeting-grid { grid-template-columns: 1fr; }
     }
 
     footer {
@@ -310,6 +335,25 @@
       <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5.042 15.165a2.528 2.528 0 0 1-2.52 2.523A2.528 2.528 0 0 1 0 15.165a2.527 2.527 0 0 1 2.522-2.52h2.52v2.52zM6.313 15.165a2.527 2.527 0 0 1 2.521-2.52 2.527 2.527 0 0 1 2.521 2.52v6.313A2.528 2.528 0 0 1 8.834 24a2.528 2.528 0 0 1-2.521-2.522v-6.313zM8.834 5.042a2.528 2.528 0 0 1-2.521-2.52A2.528 2.528 0 0 1 8.834 0a2.528 2.528 0 0 1 2.521 2.522v2.52H8.834zM8.834 6.313a2.528 2.528 0 0 1 2.521 2.521 2.528 2.528 0 0 1-2.521 2.521H2.522A2.528 2.528 0 0 1 0 8.834a2.528 2.528 0 0 1 2.522-2.521h6.312zM18.956 8.834a2.528 2.528 0 0 1 2.522-2.521A2.528 2.528 0 0 1 24 8.834a2.528 2.528 0 0 1-2.522 2.521h-2.522V8.834zM17.688 8.834a2.528 2.528 0 0 1-2.523 2.521 2.527 2.527 0 0 1-2.52-2.521V2.522A2.527 2.527 0 0 1 15.165 0a2.528 2.528 0 0 1 2.523 2.522v6.312zM15.165 18.956a2.528 2.528 0 0 1 2.523 2.522A2.528 2.528 0 0 1 15.165 24a2.527 2.527 0 0 1-2.52-2.522v-2.522h2.52zM15.165 17.688a2.527 2.527 0 0 1-2.52-2.523 2.526 2.526 0 0 1 2.52-2.52h6.313A2.527 2.527 0 0 1 24 15.165a2.528 2.528 0 0 1-2.522 2.523h-6.313z"/></svg>
       <span class="slack-text">Would love to chat with you on Slack <b>@minashoukrala</b></span>
     </button>
+
+    <section class="meeting-prep">
+      <div class="eyebrow">How I prepare</div>
+      <h2>Make every meeting count</h2>
+      <div class="meeting-grid">
+        <article class="card meeting-card">
+          <h3>Internal meetings</h3>
+          <p>Each week, I bring a fresh list of what I’ve done, what worked, what didn’t, and new next steps connected to the AEs’ accounts.</p>
+        </article>
+        <article class="card meeting-card">
+          <h3>External meetings</h3>
+          <p>I get clear on the topics ahead, prepare and refresh my knowledge, then follow the conversation closely to find ways I can contribute. If something isn’t clear, I reach out to the AE or SE afterward.</p>
+        </article>
+        <article class="card meeting-card">
+          <h3>AE one-on-ones</h3>
+          <p>I create polished slides to share my ideas, make the case for what I want to do, and align on ways to support the AE’s accounts.</p>
+        </article>
+      </div>
+    </section>
 
     <div class="built">
       <div class="eyebrow">Things I&rsquo;ve built</div>
